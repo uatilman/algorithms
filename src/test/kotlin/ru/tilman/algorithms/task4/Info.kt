@@ -1,7 +1,7 @@
-package ru.tilman.algorithms.task4.model
+package ru.tilman.algorithms.task4
 
 class Info(
-    val clazz: Class<*>,
+    private val clazz: Class<*>,
     var addTime: Long = -1L,
     var addIndexTime: Long = -1L,
     var removeTime: Long = -1L,

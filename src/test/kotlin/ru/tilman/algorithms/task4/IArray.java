@@ -1,4 +1,4 @@
-package ru.tilman.algorithms.task4.model;
+package ru.tilman.algorithms.task4;
 
 public interface IArray<T> {
     int size();

@@ -3,16 +3,20 @@ package ru.tilman.algorithms.task4
 import org.junit.jupiter.api.AfterAll
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
+import ru.tilman.algorithms.task4.model.ArrayListWrapped
 import ru.tilman.algorithms.task4.model.FactorArray
-import ru.tilman.algorithms.task4.model.IArray
 import ru.tilman.algorithms.task4.model.SingleArray
 import java.util.*
 
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-class ArraysTest {
+open class ArraysTest {
 
-    private val infoList = listOf(Info(SingleArray::class.java), Info(FactorArray::class.java), Info(ArrayListWrapped::class.java))
+    private val infoList = listOf(
+        Info(SingleArray::class.java),
+        Info(FactorArray::class.java),
+        Info(ArrayListWrapped::class.java)
+    )
 
 
     @AfterAll
@@ -23,7 +27,8 @@ class ArraysTest {
     @Test
     fun add() {
         val singleArray: IArray<Date> = SingleArray()
-        val factorArray: IArray<Date> = FactorArray()
+        val factorArray: IArray<Date> =
+            FactorArray()
         val arrayListWrapped: IArray<Date> = ArrayListWrapped()
 
         val longTime = 100_000
@@ -40,7 +45,8 @@ class ArraysTest {
     @Test
     fun addIndex() {
         val singleArray: IArray<Date> = SingleArray()
-        val factorArray: IArray<Date> = FactorArray()
+        val factorArray: IArray<Date> =
+            FactorArray()
         val arrayListWrapped: IArray<Date> = ArrayListWrapped()
 
 
@@ -57,7 +63,8 @@ class ArraysTest {
     @Test
     fun remove() {
         val singleArray: IArray<Date> = SingleArray()
-        val factorArray: IArray<Date> = FactorArray()
+        val factorArray: IArray<Date> =
+            FactorArray()
         val arrayListWrapped: IArray<Date> = ArrayListWrapped()
 
         val longTime = 100_000
@@ -84,14 +91,3 @@ class ArraysTest {
 
 }
 
-class Info(
-    val clazz: Class<*>,
-    var addTime: Long = -1L,
-    var addIndexTime: Long = -1L,
-    var removeTime: Long = -1L,
-) {
-
-    override fun toString(): String {
-        return "clazz=${clazz.simpleName}, addTime=$addTime, addIndexTime=$addIndexTime, removeTime=$removeTime"
-    }
-}
