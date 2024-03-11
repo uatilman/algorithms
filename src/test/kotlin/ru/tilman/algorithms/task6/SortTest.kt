@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 import ru.tilman.algorithms.task7.HeapSort
 import ru.tilman.algorithms.task7.SelectionSort
+import ru.tilman.algorithms.task8.MSort
+import ru.tilman.algorithms.task8.QSort
 import java.nio.file.Files
 import kotlin.io.path.Path
 import kotlin.io.path.exists
@@ -28,16 +30,16 @@ class SortTest {
 
         while (true) {
             readData("${randomPath}test.${counter}")
-                ?.let { executeTest(BubleSort(it.second), it.first, "RANDOM") }
+                ?.let { executeTest(BubleSort(it.second), it.first, "RANDOM") } ?: return
 
             readData("${digitsPath}test.${counter}")
-                ?.let { executeTest(BubleSort(it.second), it.first, "DIGITS") }
+                ?.let { executeTest(BubleSort(it.second), it.first, "DIGITS") } ?: return
 
             readData("${sortedPath}test.${counter}")
-                ?.let { executeTest(BubleSort(it.second), it.first, "SORTED") }
+                ?.let { executeTest(BubleSort(it.second), it.first, "SORTED") } ?: return
 
             readData("${reversePath}test.${counter}")
-                ?.let { executeTest(BubleSort(it.second), it.first, "REVERSED") }
+                ?.let { executeTest(BubleSort(it.second), it.first, "REVERSED") } ?: return
 
             println()
             counter++
@@ -53,16 +55,16 @@ class SortTest {
 
         while (true) {
             readData("${randomPath}test.${counter}")
-                ?.let { executeTest(InsertionSort(it.second), it.first, "RANDOM") }
+                ?.let { executeTest(InsertionSort(it.second), it.first, "RANDOM") } ?: return
 
             readData("${digitsPath}test.${counter}")
-                ?.let { executeTest(InsertionSort(it.second), it.first, "DIGITS") }
+                ?.let { executeTest(InsertionSort(it.second), it.first, "DIGITS") } ?: return
 
             readData("${sortedPath}test.${counter}")
-                ?.let { executeTest(InsertionSort(it.second), it.first, "SORTED") }
+                ?.let { executeTest(InsertionSort(it.second), it.first, "SORTED") } ?: return
 
             readData("${reversePath}test.${counter}")
-                ?.let { executeTest(InsertionSort(it.second), it.first, "REVERSED") }
+                ?.let { executeTest(InsertionSort(it.second), it.first, "REVERSED") } ?: return
 
             println()
             counter++
@@ -78,16 +80,16 @@ class SortTest {
 
         while (true) {
             readData("${randomPath}test.${counter}")
-                ?.let { executeTest(InsertionShiftSort(it.second), it.first, "RANDOM") }
+                ?.let { executeTest(InsertionShiftSort(it.second), it.first, "RANDOM") } ?: return
 
             readData("${digitsPath}test.${counter}")
-                ?.let { executeTest(InsertionShiftSort(it.second), it.first, "DIGITS") }
+                ?.let { executeTest(InsertionShiftSort(it.second), it.first, "DIGITS") } ?: return
 
             readData("${sortedPath}test.${counter}")
-                ?.let { executeTest(InsertionShiftSort(it.second), it.first, "SORTED") }
+                ?.let { executeTest(InsertionShiftSort(it.second), it.first, "SORTED") } ?: return
 
             readData("${reversePath}test.${counter}")
-                ?.let { executeTest(InsertionShiftSort(it.second), it.first, "REVERSED") }
+                ?.let { executeTest(InsertionShiftSort(it.second), it.first, "REVERSED") } ?: return
 
             println()
             counter++
@@ -101,16 +103,16 @@ class SortTest {
 
         while (true) {
             readData("${randomPath}test.${counter}")
-                ?.let { executeTest(InsertionBinarySort(it.second), it.first, "RANDOM") }
+                ?.let { executeTest(InsertionBinarySort(it.second), it.first, "RANDOM") } ?: return
 
             readData("${digitsPath}test.${counter}")
-                ?.let { executeTest(InsertionBinarySort(it.second), it.first, "DIGITS") }
+                ?.let { executeTest(InsertionBinarySort(it.second), it.first, "DIGITS") } ?: return
 
             readData("${sortedPath}test.${counter}")
-                ?.let { executeTest(InsertionBinarySort(it.second), it.first, "SORTED") }
+                ?.let { executeTest(InsertionBinarySort(it.second), it.first, "SORTED") } ?: return
 
             readData("${reversePath}test.${counter}")
-                ?.let { executeTest(InsertionBinarySort(it.second), it.first, "REVERSED") }
+                ?.let { executeTest(InsertionBinarySort(it.second), it.first, "REVERSED") } ?: return
 
             println()
             counter++
@@ -125,16 +127,16 @@ class SortTest {
 
         while (true) {
             readData("${randomPath}test.${counter}")
-                ?.let { executeTest(ShellSort(it.second), it.first, "RANDOM") }
+                ?.let { executeTest(ShellSort(it.second), it.first, "RANDOM") } ?: return
 
             readData("${digitsPath}test.${counter}")
-                ?.let { executeTest(ShellSort(it.second), it.first, "DIGITS") }
+                ?.let { executeTest(ShellSort(it.second), it.first, "DIGITS") } ?: return
 
             readData("${sortedPath}test.${counter}")
-                ?.let { executeTest(ShellSort(it.second), it.first, "SORTED") }
+                ?.let { executeTest(ShellSort(it.second), it.first, "SORTED") } ?: return
 
             readData("${reversePath}test.${counter}")
-                ?.let { executeTest(ShellSort(it.second), it.first, "REVERSED") }
+                ?.let { executeTest(ShellSort(it.second), it.first, "REVERSED") } ?: return
 
             println()
             counter++
@@ -148,16 +150,16 @@ class SortTest {
 
         while (true) {
             readData("${randomPath}test.${counter}")
-                ?.let { executeTest(SelectionSort(it.second), it.first, "RANDOM") }
+                ?.let { executeTest(SelectionSort(it.second), it.first, "RANDOM") } ?: return
 
             readData("${digitsPath}test.${counter}")
-                ?.let { executeTest(SelectionSort(it.second), it.first, "DIGITS") }
+                ?.let { executeTest(SelectionSort(it.second), it.first, "DIGITS") } ?: return
 
             readData("${sortedPath}test.${counter}")
-                ?.let { executeTest(SelectionSort(it.second), it.first, "SORTED") }
+                ?.let { executeTest(SelectionSort(it.second), it.first, "SORTED") } ?: return
 
             readData("${reversePath}test.${counter}")
-                ?.let { executeTest(SelectionSort(it.second), it.first, "REVERSED") }
+                ?.let { executeTest(SelectionSort(it.second), it.first, "REVERSED") } ?: return
 
             println()
             counter++
@@ -171,22 +173,67 @@ class SortTest {
 
         while (true) {
             readData("${randomPath}test.${counter}")
-                ?.let { executeTest(HeapSort(it.second), it.first, "RANDOM") }
+                ?.let { executeTest(HeapSort(it.second), it.first, "RANDOM") } ?: return
 
             readData("${digitsPath}test.${counter}")
-                ?.let { executeTest(HeapSort(it.second), it.first, "DIGITS") }
+                ?.let { executeTest(HeapSort(it.second), it.first, "DIGITS") } ?: return
 
             readData("${sortedPath}test.${counter}")
-                ?.let { executeTest(HeapSort(it.second), it.first, "SORTED") }
+                ?.let { executeTest(HeapSort(it.second), it.first, "SORTED") } ?: return
 
             readData("${reversePath}test.${counter}")
-                ?.let { executeTest(HeapSort(it.second), it.first, "REVERSED") }
+                ?.let { executeTest(HeapSort(it.second), it.first, "REVERSED") } ?: return
 
             println()
             counter++
         }
     }
 
+    @Test
+    @CoroutinesTimeout(testTimeoutMs = 60_000 * 10)
+    fun mergeSortTestAuto() {
+        var counter = 0
+
+        while (true) {
+            readData("${randomPath}test.${counter}")
+                ?.let { executeTest(MSort(it.second), it.first, "RANDOM") } ?: return
+
+            readData("${digitsPath}test.${counter}")
+                ?.let { executeTest(MSort(it.second), it.first, "DIGITS") } ?: return
+
+            readData("${sortedPath}test.${counter}")
+                ?.let { executeTest(MSort(it.second), it.first, "SORTED") } ?: return
+
+            readData("${reversePath}test.${counter}")
+                ?.let { executeTest(MSort(it.second), it.first, "REVERSED") } ?: return
+
+            println()
+            counter++
+        }
+    }
+
+    @Test
+    @CoroutinesTimeout(testTimeoutMs = 60_000 * 10)
+    fun qSortTestAuto() {
+        var counter = 0
+
+        while (true) {
+            readData("${randomPath}test.${counter}")
+                ?.let { executeTest(QSort(it.second), it.first, "RANDOM") } ?: return
+
+            readData("${digitsPath}test.${counter}")
+                ?.let { executeTest(QSort(it.second), it.first, "DIGITS") } ?: return
+
+            readData("${sortedPath}test.${counter}")
+                ?.let { executeTest(QSort(it.second), it.first, "SORTED") } ?: return
+
+            readData("${reversePath}test.${counter}")
+                ?.let { executeTest(QSort(it.second), it.first, "REVERSED") } ?: return
+
+            println()
+            counter++
+        }
+    }
 
     private fun readData(path: String): Pair<Array<Int>, Array<Int>>? {
         val inFile = Path("${path}.in")

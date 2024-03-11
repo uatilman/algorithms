@@ -24,7 +24,10 @@ abstract class AbstractSort<T> : Sort<T> where T : Comparable<T>{
         return first > second
     }
 
-    protected abstract fun sort()
+    protected fun moreEq(first: T, second: T): Boolean {
+        compare++
+        return first >= second
+    }
 
     override fun execute(): AbstractSort<T> {
         executeTime = measureTimeMillis {

@@ -10,6 +10,13 @@ fun setRandom(size: Int): Array<Int> {
     }
 }
 
+fun setRandom(size: Int, bound: Int): Array<Int> {
+    val random = SecureRandom()
+    return Array(size) {
+        random.nextInt(1,bound)
+    }
+}
+
 fun <T : Comparable<T>> Array<T>.binarySearchRecursion(searched: T, low: Int, high: Int, compare: CompareCounter): Int {
     if (high <= low)
         return if (searched >= get(low)) low + 1 else low
