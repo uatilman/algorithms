@@ -42,10 +42,11 @@ void remove(int x) - удаление элемента
 
 # Реализовано
 Набрано 3 байта 
+
 Создать простейшее двоичное дерево поиска. +3 байта.
 Методы к реализации:
-* void insert(int x) - вставка элемента [add]
-* bool search(int x) - поиск элемента []
+* void insert(int x) - вставка элемента [BinarySearchTree.add]
+* bool search(int x) - поиск элемента [BinarySearchTree.search]
 * ~~void remove(int x) - удаление элемента~~
 
 Протестировать работу алгоритма. +1 байт.
